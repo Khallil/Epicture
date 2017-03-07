@@ -61,12 +61,6 @@ public class ImgurShowTask extends AppCompatActivity  {
     String inputStreamString = new String();
 
     public static String TAG = "ImgurShowTask";
-    private OkHttpClient httpClient = new OkHttpClient();
-    Request request = new Request.Builder()
-            .url("https://api.imgur.com/3/account/me/images")
-            .header("Authorization", "Client-ID 807a43c4e5e49b7")
-            .header("User-Agent", "Epitech")
-            .build();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -139,6 +133,7 @@ public class ImgurShowTask extends AppCompatActivity  {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         final List<Photo> photos = new ArrayList<>();
 
         for (int i = 0; i < items.length(); i++) {
@@ -169,7 +164,7 @@ public class ImgurShowTask extends AppCompatActivity  {
             });
 
         }
-        fetchData();
+       // fetchData();
     }
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -185,9 +180,9 @@ public class ImgurShowTask extends AppCompatActivity  {
     }
 
 
-    private void fetchData() {
+   /* private void fetchData() {
         httpClient = new OkHttpClient.Builder().build();
-    }
+    }*/
 
     private void render(final List<Photo> photos) {
         RecyclerView rv = (RecyclerView) findViewById(R.id.rv_of_photos);
